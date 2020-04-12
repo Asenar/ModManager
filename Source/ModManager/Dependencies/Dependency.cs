@@ -16,7 +16,14 @@ namespace ModManager
     public abstract class Dependency : ModDependency
     {
         public Manifest parent;
-        public ModMetaData target;
+
+        public ModMetaData Target
+        {
+            get =>
+                _target ?? ( _target = ModLister.GetActiveModWithIdentifier( packageId ) ??
+                                       ModLister.GetModWithIdentifier( packageId, true ) );
+            set => _target = value;
+        }
         
         public virtual int Severity => 1;
 
@@ -24,9 +31,10 @@ namespace ModManager
 
         protected bool? satisfied;
 
-        public virtual void Notify_Recheck()
+        public virtual void Notify_Recache()
         {
             satisfied = null;
+            Target = null;
         }
 
         public override bool IsSatisfied {
@@ -53,6 +61,7 @@ namespace ModManager
         public override Texture2D StatusIcon => Resources.Warning;
 
         public static Regex packageIdFormatRegex = new Regex(@"(?=.{1,60}$)^(?:[a-z0-9]+\.)+[a-z0-9]+$", RegexOptions.IgnoreCase );
+        private ModMetaData _target;
 
         public const string InvalidPackageId = "invalid.package.id";
 
@@ -80,7 +89,7 @@ namespace ModManager
         {
             this.parent    = parent;
             this.packageId = packageId;
-            target         = ModLister.GetModWithIdentifier( packageId, ignorePostfix );
+            Target         = ModLister.GetModWithIdentifier( packageId, ignorePostfix );
         }
 
         public Dependency( Manifest parent, ModDependency depend ): this( parent, depend.packageId )
@@ -113,7 +122,7 @@ namespace ModManager
                     packageId = text;
                 }
 
-                target = ModLister.GetModWithIdentifier( packageId, true );
+                Target = ModLister.GetModWithIdentifier( packageId, true );
             }
             catch ( Exception ex )
             {

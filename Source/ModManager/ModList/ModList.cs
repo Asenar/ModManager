@@ -193,8 +193,8 @@ namespace ModManager
                 }
             }
 
-            // reset selected versions for all these mods
-            ModButtonManager.Notify_ModOrderChanged();
+            // recache issues and selected versions for all these mods.
+            ModButtonManager.Notify_ModListChanged();
         }
 
         public override string ToString()

@@ -3,8 +3,8 @@
     "version": {
         "alpha": 18,
         "major": 2,
-        "minor": 6,
-        "build": 886
+        "minor": 8,
+        "build": 888
     },
     "visibility": 0,
     "git_repo": "ModManager",
@@ -19,9 +19,11 @@
         "enescaglayan": "Turkish translation",
         "Lex1975": "Russian translation",
         "Torq": "Russian translation",
-        "Patrick Schmitt": "German translation"
+        "Patrick Schmitt": "German translation",
+        "Han Yaodong": "",
+        "Michaël Marinetti": ""
     },
-    "changenote": "2020-03-19 :: Fluffy :: fix incompatible mod requirements, add resolvers'",
+    "changenote": "2020-04-12 :: Fluffy :: implement auto-sort'",
     "tags": [
         "1.0",
         "1.1"
@@ -30,10 +32,10 @@
     "changenotes": [
         {
             "repo": "ModManager",
-            "hash": "'tformat:1d20d2a408c090df09ed4dc9f3809dcd5aae93c2",
-            "date": "2020-03-19",
+            "hash": "'tformat:7a0b510115ff61c7c1985c81b54407cce0246be5",
+            "date": "2020-04-12",
             "author": "Fluffy",
-            "message": "fix incompatible mod requirements, add resolvers'"
+            "message": "implement auto-sort'"
         }
     ],
     "packageId": "fluffy.modmanager"

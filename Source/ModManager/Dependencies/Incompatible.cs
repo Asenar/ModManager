@@ -22,12 +22,15 @@ namespace ModManager
             get
             {
                 var options = Utilities.NewOptionsList;
-                var targetButton = target.GetManifest().Button;
-                options.Add( new FloatMenuOption( I18n.DeactivateMod( targetButton ), () => targetButton.Active = false ) );
+                var targetButton = Target.GetManifest().Button;
+                options.Add( new FloatMenuOption( I18n.DeactivateMod( targetButton ),
+                                                  () => targetButton.Active = false ) );
+                options.Add( new FloatMenuOption( I18n.DeactivateMod( parent.Button ),
+                                                  () => parent.Button.Active = false ) );
                 return options;
             }
         }
 
-        public override string Tooltip => I18n.IncompatibleMod( versioned ? target?.Name + " v" + target?.GetManifest().Version : target?.Name );
+        public override string Tooltip => I18n.IncompatibleMod( versioned ? Target?.Name + " v" + Target?.GetManifest().Version : Target?.Name );
     }
 }

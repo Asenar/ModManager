@@ -78,7 +78,7 @@ namespace ModManager
             DrawRequirements( ref canvas );
         }
 
-        public override IEnumerable<Dependency> Issues => Manifest.EmptyRequirementList;
+        public override IEnumerable<Dependency> Requirements => Manifest.EmptyRequirementList;
 //        {
 //            get
 //            {
@@ -90,7 +90,5 @@ namespace ModManager
 //                return _issues;
 //            }
 //        }
-
-        public override void Notify_ResetSelected(){}
     }
 }

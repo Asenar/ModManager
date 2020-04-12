@@ -77,6 +77,8 @@ Sometimes, it's easier to navigate large lists with the keyboard.
  - Lex1975:	Russian translation
  - Torq:	Russian translation
  - Patrick Schmitt:	German translation
+ - Han Yaodong:	
+ - Michaël Marinetti:	
 
 # Think you found a bug? 
 Please read [this guide](http://steamcommunity.com/sharedfiles/filedetails/?id=725234314) before creating a bug report,
@@ -99,4 +101,4 @@ Show your appreciation by buying me a coffee (or contribute towards a nice singl
 [![I Have a Black Dog](https://i.ibb.co/ss59Rwy/New-Project-2.png)](https://www.youtube.com/watch?v=XiCrniLQGYc)
 
 # Version
-This is version 2.6.886, for RimWorld 1.1.2575.
+This is version 2.8.888, for RimWorld 1.1.2598.
